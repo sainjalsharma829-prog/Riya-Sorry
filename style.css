@@ -1,0 +1,238 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    background: linear-gradient(-45deg, #ff6b9d, #c44569, #feca57, #ff9ff3);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    color: white;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Hero */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.riya-image {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 8px solid rgba(255,255,255,0.3);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    margin-bottom: 20px;
+    animation: float 3s ease-in-out infinite;
+    object-fit: cover;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+.typing-effect {
+    font-family: 'Dancing Script', cursive;
+    font-size: 4rem;
+    margin-bottom: 20px;
+    min-height: 80px;
+}
+
+.subtext {
+    font-size: 1.5rem;
+    opacity: 0.9;
+}
+
+/* Hearts Container */
+.hearts-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Sections */
+section {
+    padding: 100px 0;
+    text-align: center;
+}
+
+h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3.5rem;
+    margin-bottom: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+p {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto 30px;
+}
+
+/* Promise */
+.promise ul {
+    list-style: none;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.promise li {
+    font-size: 1.4rem;
+    margin: 20px 0;
+    padding: 15px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 50px;
+    backdrop-filter: blur(10px);
+}
+
+/* Love Grid */
+.love-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin: 60px 0;
+}
+
+.love-item {
+    background: rgba(255,255,255,0.15);
+    padding: 40px 20px;
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    transition: transform 0.3s ease;
+}
+
+.love-item:hover {
+    transform: translateY(-10px);
+}
+
+.love-item i {
+    font-size: 4rem;
+    color: #ff6b9d;
+    margin-bottom: 20px;
+}
+
+.love-item h4 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+/* Poem */
+.poem {
+    max-width: 600px;
+    margin: 0 auto;
+    background: rgba(255,255,255,0.1);
+    padding: 40px;
+    border-radius: 20px;
+    font-style: italic;
+    font-size: 1.4rem;
+}
+
+/* Surprise */
+.surprise-btn {
+    background: linear-gradient(45deg, #ff6b9d, #feca57);
+    border: none;
+    padding: 20px 50px;
+    font-size: 1.8rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    font-family: 'Dancing Script', cursive;
+}
+
+.surprise-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(45deg, #ff9ff3, #ff6b9d);
+    padding: 50px;
+    border-radius: 30px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+    z-index: 1000;
+    max-width: 500px;
+    text-align: center;
+    animation: popupAnim 0.5s ease;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes popupAnim {
+    from { opacity: 0; transform: translate(-50%, -60%); }
+    to { opacity: 1; transform: translate(-50%, -50%); }
+}
+
+.popup h3 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-family: 'Dancing Script', cursive;
+}
+
+.popup button {
+    background: white;
+    color: #ff6b9d;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 25px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+/* Animations */
+.fade-in {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .typing-effect { font-size: 2.5rem; }
+    .riya-image { width: 200px; height: 200px; }
+    h2 { font-size: 2.5rem; }
+    .love-grid { grid-template-columns: 1fr; }
+}
